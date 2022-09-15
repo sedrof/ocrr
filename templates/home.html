@@ -76,7 +76,8 @@
                     <div class="buttons">
                         <button id="upload-btn" onclick="document.getElementById('formFile').click()"
                             class="custom-btn shadow-md mb-2">Upload
-                            Img <i class="fi fi-rr-upload"></i>
+                            Invoice
+                             <i class="fi fi-rr-upload"></i>
                         </button>
                         <form method="post" enctype="multipart/form-data" class="flex justify-center">
                             {% csrf_token %}
@@ -85,8 +86,8 @@
                             <button class="custom-btn shadow-md " disabled>
                                 <select name="language" id="languages" class="bg-transparent">
                                     <option value="eng" selected>English</option>
-                                    <option value="nep">Nepali</option>
-                                    <option value="hin">Hindi</option>
+                                    {% comment %} <option value="nep">Nepali</option>
+                                    <option value="hin">Hindi</option> {% endcomment %}
                                 </select>
                             </button>
                             <button type="submit" class="custom-btn shadow-md bg-white">Scan <i
@@ -194,12 +195,12 @@
     <footer class="text-gray-600 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <img src="/static/assets/icons/sachit.jpg" alt="" srcset=""
-                    class="w-h-20 h-20 text-white p-2 stroke-slate-400 rounded-full">
+                {% comment %} <img src="/static/assets/icons/sachit.jpg" alt="" srcset=""
+                    class="w-h-20 h-20 text-white p-2 stroke-slate-400 rounded-full"> {% endcomment %}
                 <span class="ml-3 text-xl">TEXT Extractor</span>
             </a>
             <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                Sachit Yadav
+                OCR-WATER INVOICE
             </p>
 
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

@@ -25,7 +25,43 @@ SECRET_KEY = "django-insecure-rvg_d+jt2!lv0ow6vmzocscl+010w2vdz^@rjgorz^=930o13b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+if not DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+    SECRET_KEY = "nnbjh58y3vj!i&8fddcl$2$39e+l63%qq0^$5yx2hi729+ynyr"
+
+    ALLOWED_HOSTS = ["*"]
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": 'ids',
+            "HOST": 'localhost',
+            "USER": 'postgres',
+            "PASSWORD": 'hotmail12',
+        }
+    }
+else:
+    # ALLOWED_HOSTS = [
+    #     "cracalculator.com.au",
+    #     "www.cracalculator.com.au",
+    #     "localhost:8000",
+    #     "cra-testing.azurewebsites.net",
+    #     "www.cra-testing.azurewebsites.net",
+    #     "https://cra-testing.azurewebsites.net"
+    # ]
+    ALLOWED_HOSTS = ['*']
+    SECRET_KEY = os.environ["SECRET_KEY"]
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "ocrr",
+            "HOST": "cra-calculator-db" + ".postgres.database.azure.com",
+            "USER": "CraCalcAdmin" + "@" + "cra-calculator-db" + ".postgres.database.azure.com",
+            "PASSWORD": "JnzTz@iu",
+        }
+    }
+
 
 
 # Application definition
